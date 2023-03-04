@@ -1,7 +1,8 @@
 
 # Module to deploy basic networking 
 module "vpc-dev" {
-  source = "git::https://github.com/sreecharangh/week6.git"
+  source = "git::https://github.com/sreecharangh/week6/tree/main/Session%201/01_task1_start/modules/aws_network"
+  #source = "git::https://github.com/sreecharangh/week6.git"
   #source = "home/ec2-user/environment/week6/Session\\ 1/01_task1_start/modules/aws_network"
   #source              = "git@github.com:igeiman/aws_network.git"
   env                 = var.env
@@ -13,7 +14,8 @@ module "vpc-dev" {
 
 # Retrieve global variables from the Terraform module
 module "globalvars"{
-  source = "git::https://github.com/sreecharangh/week6.git"
+  source = "git::https://github.com/sreecharangh/week6/tree/main/Session%201/01_task1_start/modules/globalvars"
+  #source = "git::https://github.com/sreecharangh/week6.git"
   #source = "home/ec2-user/environment/week6/Session\\ 1/01_task1_start/modules/globalvars"
 }
 
