@@ -49,7 +49,7 @@ resource "aws_subnet" "private_subnet" {
   cidr_block        = var.private_cidr_block
   availability_zone = data.aws_availability_zones.available.names[0]
   tags = merge(
-    Local.default_tags, {
+    local.default_tags, {
       Name = "${var.prefix}-private-subnet"
       Tier = "Private"
     }
