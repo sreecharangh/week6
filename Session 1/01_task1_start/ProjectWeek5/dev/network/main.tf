@@ -1,3 +1,8 @@
+provider "aws" {
+region = "us-east-1"
+profile = "voclabs/user2346899=Sree_Charan_Erupaka"
+}
+
 
 # Module to deploy basic networking 
 module "vpc-dev" {
