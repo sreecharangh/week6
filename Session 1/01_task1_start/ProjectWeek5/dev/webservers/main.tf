@@ -55,7 +55,7 @@ resource "aws_instance" "my_amazon" {
   ami                         = data.aws_ami.latest_amazon_linux.id
   instance_type               = lookup(var.instance_type, var.env)
   key_name                    = aws_key_pair.web_key.key_name
-  subnet_id                   = data.terraform_remote_state.network.outputs.public_subnet_ids[0]
+  subnet_id                   = data.terraform_remote_state.network.outputs.private_subnet_id #may raise an error
   security_groups             = [aws_security_group.web_sg.id]
   associate_public_ip_address = false
   user_data = templatefile("${path.module}/install_httpd.sh.tpl",
@@ -129,7 +129,7 @@ resource "aws_security_group" "web_sg" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
+    security_groups  = [aws_security_group.bastion_sg.id]
     ipv6_cidr_blocks = ["::/0"]
   }
 
