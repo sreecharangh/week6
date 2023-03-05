@@ -38,8 +38,8 @@ variable "private_cidr_block" {
 }
 
 variable "public_subnet_cidrs" {
-  default     = ["10.1.0.0/22"]
-  type        = list(string)
+  default     = "10.1.0.0/22"
+  type        = string
   description = "Public Subnet CIDRs"
 }
 
