@@ -20,7 +20,7 @@ variable "private_cidr_blocks" {
 
 # VPC CIDR range
 variable "vpc_cidr" {
-  default     = "10.20.0.0/16"
+  default     = "10.1.0.0/16"
   type        = string
   description = "VPC to host static web site"
 }
@@ -35,4 +35,17 @@ variable "env" {
 variable "private_cidr_block" {
   type        = string
   description = "Private Subnet CIDRs"
+}
+
+variable "public_subnet_cidrs" {
+  default     = ["10.1.0.0/22"]
+  type        = list(string)
+  description = "Public Subnet CIDRs"
+}
+
+
+variable "private_subnet_cidr" {
+  default     = "10.1.32.0/19"
+  type        = string
+  description = "Private Subnet CIDR"
 }
