@@ -13,7 +13,7 @@ variable "prefix" {
 
 # Provision public subnets in custom VPC
 variable "private_cidr_blocks" {
-  default     = ["10.1.32.0/19"]
+  default     = ["10.1.64.0/18"]
   type        = list(string)
   description = "Public Subnet CIDRs"
 }
