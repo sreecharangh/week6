@@ -30,6 +30,11 @@ variable "my_public_ip" {
   description = "Public IP of my Cloud 9 station to be opened in bastion ingress"
 }
 
+variable "service_ports" {
+  type        = list(string)
+  default     = ["80", "22"]
+  description = "Ports that should be open on a webserver"
+}
 
 
 

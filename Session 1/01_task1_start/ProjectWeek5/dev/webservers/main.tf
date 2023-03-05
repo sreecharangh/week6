@@ -112,25 +112,17 @@ resource "aws_ebs_volume" "web_ebs" {
 # Security Group
 resource "aws_security_group" "web_sg" {
   name        = "allow_http_ssh"
-  description = "Allow HTTP and SSH inbound traffic"
+  description = "Allow SSH inbound traffic"
   vpc_id      = data.terraform_remote_state.network.outputs.vpc_id
 
-  ingress {
-    description      = "HTTP from everywhere"
-    from_port        = 80
-    to_port          = 80
-    protocol         = "tcp"
-    cidr_blocks      = ["0.0.0.0/0"]
-    ipv6_cidr_blocks = ["::/0"]
-  }
-
-  ingress {
-    description      = "SSH from everywhere"
-    from_port        = 22
-    to_port          = 22
-    protocol         = "tcp"
-    security_groups  = [aws_security_group.bastion_sg.id]
-    ipv6_cidr_blocks = ["::/0"]
+  dynamic "ingress" {
+    for_each = var.service_ports
+    content {
+      from_port       = ingress.value
+      to_port         = ingress.value
+      security_groups = [aws_security_group.bastion_sg.id]
+      protocol        = "tcp"
+    }
   }
 
   egress {
