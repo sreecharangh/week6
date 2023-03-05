@@ -8,5 +8,5 @@ output "default_tags" {
 
 # Prefix to identify resources
 output "prefix" {
-  value     = "week5"
+  value     = "week6"
 }
