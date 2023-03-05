@@ -17,14 +17,14 @@ variable "prefix" {
 
 # Provision public subnets in custom VPC
 variable "public_subnet_cidrs" {
-  default     = ["10.1.0.0/24"]
-  type        = list(string)
+  default     = "10.1.0.0/22"
+  type        = string
   description = "Public Subnet CIDRs"
 }
 
 
 variable "private_subnet_cidr" {
-  default     = "10.1.3.0/24"
+  default     = "10.1.32.0/19"
   type        = string
   description = "Private Subnet CIDR"
 }
