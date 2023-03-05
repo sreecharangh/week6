@@ -3,7 +3,7 @@
 module "vpc-dev" {
   #source = "git::https://github.com/sreecharangh/week6/tree/main/Session%201/01_task1_start/modules/aws_network"
   #source = "git::https://github.com/sreecharangh/week6.git"
-  source = "/../../modules/aws_network"
+  source = "../../../modules/aws_network"
   #source              = "git@github.com:igeiman/aws_network.git"
   env                 = var.env
   vpc_cidr            = var.vpc_cidr
@@ -16,7 +16,7 @@ module "vpc-dev" {
 module "globalvars"{
   #source = "git::https://github.com/sreecharangh/week6/tree/main/Session%201/01_task1_start/modules/globalvars"
   #source = "git::https://github.com/sreecharangh/week6.git"
-  source = "/../../modules/globalvars"
+  source = "../../../modules/globalvars"
   
 }
 
