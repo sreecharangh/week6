@@ -2,8 +2,8 @@
 
 
 [linux]
-linux1 ansible_host=54.147.193.205 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/linux
-linux2 ansible_host=52.205.255.46 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/linux
+linux1 ansible_host=52.86.119.91 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/linux
+linux2 ansible_host=100.24.57.99 ansible_user=ec2-user ansible_ssh_private_key_file=/home/ec2-user/.ssh/linux
 
 [windows:vars]
 ansible_ssh_user = Administrator
